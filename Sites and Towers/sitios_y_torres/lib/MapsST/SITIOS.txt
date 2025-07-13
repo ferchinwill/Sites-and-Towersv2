@@ -1,0 +1,61 @@
+SITIOS:
+Cemain Tampico--22.234779, -97.868120
+Maraboto--22.253908, -97.876431
+Torre Baltica--22.336532, -97.825680
+Torre Mediterranea--22.335729, -97.825342
+Torre Velamar--22.338813, -97.826559
+Torre Cantabrica--22.335179, -97.825058
+Cemain Altamira--22.403850, -97.908730
+Benito Abad--22.212770, -97.855920
+Cain Barquito--22.337230, -97.871650
+Torre 1010--22.263509, -97.868982
+Miralta--22.353843, -97.904993
+Tampico Alto--22.111869, -97.800390
+El 100--22.073278, -97.777042
+Nuvagro--22.311625, -97.878713
+Villa De Arista--22.644970, -100.850179
+Rio Verde--21.919657, -99.951601
+Cerritos--22.42785, -100.282063
+Cerro San Lorenzo--22.546225, -100.646848
+Charcas--23.130586, -101.110148
+Charquito--22.627447, -100.693385
+Cordova--22.393469, -100.691209
+Don Cuco--22.644923, -100.850224
+El Arbolito--22.678071, -100.848524
+El Tajo--22.700537, -100.819803
+Entronque--22.568645, -100.639189
+La Pila--22.711523, -100.835368
+Leoncito--22.500883, -100.657666
+Panaderia--22.63812, -100.846241
+Salitrillos--22.649754, -100.726936
+San Elias--22.666483, -100.852398
+San Lorenzo--22.558339, -100.647803
+Santa Rita--22.944667, -101.032209
+Torre Max--22.927123, -101.090221
+Torre San Juan--22.930489, -101.100689
+Villa Hidalgo--22.449137, -100.67971
+Bomberos Germinal--22.308623, -97.858878
+Comapa Altamira--22.394934, -97.930903
+Comapa Altavista--22.237542, -97.874284
+CRI las Torres--22.30399, -97.88803
+Diario Centro Tampico--22.220122, -97.863263
+Multimedios Av Hidalgo--22.242335, -97.871287
+Obras Pub Altamira--22.401243, -97.941716
+Torre 510--22.247882, -97.876676
+Torre 514--22.248198, -97.877133
+Torre 811--22.263116, -97.868014
+Torre Almendros--22.27674, -97.870561
+Torre Aytotam--22.216128, -97.858257
+Torre Cain--22.337167, -97.871529
+Torre Marbella--22.332476, -97.823959
+Torre Maramara--22.334648, -97.824729
+Torre Pv--22.185568, -97.835744
+Torre Real Miramar--22.270977, -97.791296
+Torre Retama--22.382918, -97.911742
+Torre Rull--22.272573, -97.891276
+Torre TMM--22.446029, -97.889636
+
+
+
+
+

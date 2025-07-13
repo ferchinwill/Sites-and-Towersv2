@@ -1,0 +1,6 @@
+{
+  "enable-web": true,
+  "enable-hot-reload": true,
+  "hot-reload-timeout": 5000,
+  "web-renderer": "html"
+} 
