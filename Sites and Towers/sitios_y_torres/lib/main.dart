@@ -38,7 +38,7 @@ class _PantallaBienvenidaState extends State<PantallaBienvenida> {
             Image.asset('Imagenes/Htv.png', width: 180, height: 180),
             const SizedBox(height: 32),
             const Text(
-              'Bienvenido',
+              'Bienvenido a Sitios y Torres',
               style: TextStyle(
                 fontSize: 32,
                 color: Color(0xFF2196F3),
@@ -315,7 +315,7 @@ class PantallaInicio extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Sitios y Torres',
+                        'Sitios y torres',
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                     ],

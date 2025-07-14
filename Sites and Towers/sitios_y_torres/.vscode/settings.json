@@ -1,11 +1,18 @@
 {
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 300,
   "dart.flutterHotReloadOnSave": "all",
   "dart.flutterHotRestartOnSave": "never",
+  "dart.hotReloadOnSave": "all",
+  "dart.hotRestartOnSave": "never",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
-  }
+  },
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "dart.showInspectorNotificationsForWidgetErrors": true,
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true
 } 

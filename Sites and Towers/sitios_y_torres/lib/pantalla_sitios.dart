@@ -73,16 +73,13 @@ class _PantallaSitiosState extends State<PantallaSitios> {
                 latitud: sitio.latitud,
                 longitud: sitio.longitud,
                 estado: 'Activo',
-                tipo: 'Sitio de Telecomunicaciones',
-                descripcion: 'Sitio de infraestructura de telecomunicaciones',
-                ultimaActualizacion: 'Hoy',
-                informacionAdicional: {
-                  'Región': 'Tamaulipas',
+                 /* informacionAdicional: {
+                  'Región': '',
                   'Operador': '',
                   'Tecnología': '',
                   'Altura': '30m',
                   'Potencia': '1000W',
-                },
+                },*/
               );
               
               Navigator.push(
