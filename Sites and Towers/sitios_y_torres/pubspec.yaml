@@ -94,6 +94,8 @@ flutter:
   assets:
     - Imagenes/Htv.png
     - Imagenes/LogoApp.jpg
+    - Imagenes/SiteImagen.png
+    - Imagenes/imageheader.png
     - lib/MapsST/SITIOS.txt
     - lib/MapsST/TORRES.txt
 
