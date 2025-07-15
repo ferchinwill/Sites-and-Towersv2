@@ -211,7 +211,7 @@ class _PantallaMaquetaSitiosState extends State<PantallaMaquetaSitios> {
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Color(0xFF2196F3),
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
         children: [
@@ -249,7 +249,7 @@ class _PantallaMaquetaSitiosState extends State<PantallaMaquetaSitios> {
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 0, 85, 154),
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
         children: [
@@ -287,7 +287,7 @@ class _PantallaMaquetaSitiosState extends State<PantallaMaquetaSitios> {
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 0, 85, 154),
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
         children: [
@@ -322,72 +322,103 @@ class _PantallaMaquetaSitiosState extends State<PantallaMaquetaSitios> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Ubicación',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF2196F3),
-            ),
-          ),
-          const SizedBox(height: 12),
-          // Vista previa real del mapa
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PantallaMapa(
-                    sitioSeleccionado: Sitio(
-                      nombre: widget.sitio.nombre,
-                      latitud: widget.sitio.latitud,
-                      longitud: widget.sitio.longitud,
-                    ),
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Ubicación',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 0, 0, 0),
                 ),
-              );
-            },
-            child: SizedBox(
-              height: 180,
-              width: double.infinity,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: FlutterMap(
-                  options: MapOptions(
-                    initialCenter: LatLng(
-                      widget.sitio.latitud,
-                      widget.sitio.longitud,
-                    ),
-                    initialZoom: 16,
-                    interactionOptions: const InteractionOptions(
-                      flags: InteractiveFlag.none,
-                    ),
-                  ),
-                  children: [
-                    TileLayer(
-                      urlTemplate:
-                          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                      userAgentPackageName: 'com.innova.sitiostorres',
-                    ),
-                    MarkerLayer(
-                      markers: [
-                        Marker(
-                          width: 60.0,
-                          height: 60.0,
-                          point: LatLng(
-                            widget.sitio.latitud,
-                            widget.sitio.longitud,
-                          ),
-                          child: const Icon(
-                            Icons.wifi,
-                            color: Colors.blue,
-                            size: 36,
-                          ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PantallaMapa(
+                        sitioSeleccionado: Sitio(
+                          nombre: widget.sitio.nombre,
+                          latitud: widget.sitio.latitud,
+                          longitud: widget.sitio.longitud,
                         ),
-                      ],
+                      ),
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF2196F3),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Icon(
+                        Icons.map,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    const Text(
+                      'Abrir',
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Color(0xFF2196F3),
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ],
                 ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          // Vista previa del mapa (sin GestureDetector)
+          SizedBox(
+            height: 180,
+            width: double.infinity,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: FlutterMap(
+                options: MapOptions(
+                  initialCenter: LatLng(
+                    widget.sitio.latitud,
+                    widget.sitio.longitud,
+                  ),
+                  initialZoom: 16,
+                  interactionOptions: const InteractionOptions(
+                    flags: InteractiveFlag.none,
+                  ),
+                ),
+                children: [
+                  TileLayer(
+                    urlTemplate:
+                        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    userAgentPackageName: 'com.innova.sitiostorres',
+                  ),
+                  MarkerLayer(
+                    markers: [
+                      Marker(
+                        width: 60.0,
+                        height: 60.0,
+                        point: LatLng(
+                          widget.sitio.latitud,
+                          widget.sitio.longitud,
+                        ),
+                        child: const Icon(
+                          Icons.wifi,
+                          color: Colors.blue,
+                          size: 36,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),

@@ -307,7 +307,7 @@ class PantallaInicio extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Bienvenido',
+                        'Bienvenido Jorge Duran',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -315,7 +315,7 @@ class PantallaInicio extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Sitios y torres',
+                        'Tecnico de Red ',
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                     ],
