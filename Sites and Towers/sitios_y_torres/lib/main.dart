@@ -41,7 +41,7 @@ class _PantallaBienvenidaState extends State<PantallaBienvenida> {
               'Bienvenido a Sitios y Torres',
               style: TextStyle(
                 fontSize: 32,
-                color: Color(0xFF2196F3),
+                color: Color.fromARGB(255, 1, 33, 59),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -174,6 +174,8 @@ class PaginaPrincipal extends StatefulWidget {
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
   int _indiceSeleccionado = 0;
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   // Lista de widgets para cada pantalla
   static final List<Widget> _pantallas = <Widget>[
     PantallaInicio(),
@@ -187,7 +189,8 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       _indiceSeleccionado = index;
     });
   }
-///Funcion para el drawer de la pantalla principal del side bar 
+
+  ///Funcion para el drawer de la pantalla principal del side bar
   Widget _buildDrawer(BuildContext context) {
     return Drawer(
       child: ListView(
@@ -205,7 +208,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                 const Text(
                   'Sitios y Torres',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 0, 0, 0),
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -225,7 +228,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
               _onItemTapped(0);
             },
           ),
-         
+
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.red),
             title: const Text(
@@ -245,22 +248,73 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
     );
   }
 
+  /// Drawer lateral derecho para búsqueda/filtro
+  Widget _buildSearchDrawer(BuildContext context) {
+    return Drawer(
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Buscar o Filtrar',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: 'Buscar...',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.search),
+                ),
+                // Aquí puedes agregar lógica para filtrar resultados
+              ),
+              // Puedes agregar más filtros aquí si lo deseas
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-///Funcion para la barra de navegacion inferior
+  ///Funcion para la barra de navegacion inferior
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: GestureDetector(
           onTap: () {
             Scaffold.of(context).openDrawer();
           },
-          child: Image.asset('Imagenes/Htv.png', width: 25, height: 25),
         ),
-        backgroundColor: const Color(0xFF2196F3),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              _scaffoldKey.currentState?.openEndDrawer();
+            },
+          ),
+        ],
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color(0xFF2196F3).withOpacity(0.9),
+                const Color.fromARGB(255, 3, 60, 117).withOpacity(0.9),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
         foregroundColor: Colors.white,
       ),
       drawer: _buildDrawer(context),
+      endDrawer: _buildSearchDrawer(context),
       body: _pantallas[_indiceSeleccionado],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -272,7 +326,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
 
           BottomNavigationBarItem(icon: Icon(Icons.wifi), label: 'Sitios'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.location_city),
+            icon: Icon(Icons.cell_tower),
             label: 'Torres',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Mapa'),
@@ -311,13 +365,10 @@ class PantallaInicio extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF2196F3),
+                          color: Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
-                      Text(
-                        'Tecnico de Red ',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
-                      ),
+                   
                     ],
                   ),
                 ),
@@ -336,8 +387,8 @@ class PantallaInicio extends StatelessWidget {
               children: [
                 Expanded(
                   child: _buildStatCard(
-                    'Sitios Activos',
-                    '156',
+                    'Sitios',
+                    '55',
                     Icons.wifi,
                     Colors.green,
                   ),
@@ -346,38 +397,15 @@ class PantallaInicio extends StatelessWidget {
                 Expanded(
                   child: _buildStatCard(
                     'Torres',
-                    '89',
-                    Icons.location_city,
+                    '23',
+                    Icons.cell_tower,
                     Colors.blue,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 12),
-
-            Row(
-              children: [
-                Expanded(
-                  child: _buildStatCard(
-                    'Energía',
-                    '95%',
-                    Icons.bolt,
-                    Colors.orange,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _buildStatCard(
-                    'Alertas',
-                    '3',
-                    Icons.warning,
-                    Colors.red,
-                  ),
-                ),
-              ],
-            ),
             const SizedBox(height: 32),
-
             // Acciones rápidas
             const Text(
               'Acciones Rápidas',

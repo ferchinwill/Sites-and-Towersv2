@@ -198,7 +198,6 @@ class _PantallaMapaState extends State<PantallaMapa> {
       ];
     }
     return Scaffold(
-      appBar: AppBar(title: const Text('Mapa de Sitios y Torres')),
       body: FlutterMap(
         mapController: mapController,
         options: MapOptions(
